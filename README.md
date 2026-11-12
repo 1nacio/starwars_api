@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -17,3 +18,17 @@ You can also try [the experimental native React Compiler support in plugin-react
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+=======
+# StarWars_Guesser 
+
+- A aplicação foi feita com uso da biblioteca React
+    - Vite foi a ferramenta utilizada para o servidor
+    - JavaScript + Compilador React
+    - EsLint como parser
+- APIs consumidas
+    - [swapi](https://swapi.dev/)
+    - [starwarsgallery](https://starwarsgallery.netlify.app/swapi-image-api/)
+
+
+      
+>>>>>>> 7b28461db7f942842293d54b16363aefb54078d4
