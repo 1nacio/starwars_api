@@ -1,0 +1,55 @@
+.cabecalho {
+  --navbar-height: 64px;
+
+  height: var(--navbar-height);
+ background: var(--bg-white);
+  border-bottom: 1px solid #e5e5e5;
+  font-family: var(--menu-font-family);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* fundo ocupa a largura toda, conteúdo respeita a largura máxima */
+  padding-inline: max(
+    var(--spacing-xl),
+    calc((100% - var(--container-width)) / 2)
+  );
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-xl);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navlink a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navlink a:hover {
+  color: var(--hover-color);
+}
+
+.burger {
+  display: none; /* será usado na versão mobile */
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+
+}

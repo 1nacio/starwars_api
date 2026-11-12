@@ -1,0 +1,38 @@
+.rodape {
+  margin-top: 48px;
+  padding: 28px var(--spacing-xl);
+  color: #e8e8ee;
+  text-align: center;
+  background: #0a0a0f;
+  border-top: 1px solid rgb(255 232 31 / 0.35);
+}
+
+.conteudo {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.titulo {
+  margin: 0 0 12px;
+  color: #ffe81f;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.texto {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.credito {
+  margin: 16px 0 0;
+  color: #fff58a;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .rodape {
+    padding: 24px 16px;
+  }
+}

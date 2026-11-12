@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title">
+  <title id="title">Imagem de planeta indisponível</title>
+  <defs>
+    <radialGradient id="planet" cx="35%" cy="30%">
+      <stop offset="0" stop-color="#ffe81f"/>
+      <stop offset="1" stop-color="#756b19"/>
+    </radialGradient>
+    <radialGradient id="space">
+      <stop offset="0" stop-color="#202033"/>
+      <stop offset="1" stop-color="#090910"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#space)"/>
+  <circle cx="200" cy="200" r="118" fill="none" stroke="#ffe81f" stroke-opacity=".35" stroke-width="2"/>
+  <circle cx="200" cy="200" r="88" fill="url(#planet)"/>
+  <path d="M124 204c45-27 105-31 152-10M143 248c37-16 74-18 113-7" fill="none" stroke="#0a0a0f" stroke-opacity=".35" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="90" cy="95" r="3" fill="#fff58a"/>
+  <circle cx="308" cy="111" r="2" fill="#fff58a"/>
+  <circle cx="305" cy="300" r="3" fill="#fff58a"/>
+  <circle cx="82" cy="286" r="2" fill="#fff58a"/>
+</svg>

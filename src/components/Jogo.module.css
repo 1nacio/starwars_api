@@ -1,0 +1,390 @@
+/* ========== LAYOUT DA PÁGINA ========== */
+.jogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+
+  min-height: calc(100dvh - 64px);
+  padding: var(--spacing-xl) var(--spacing-xl) 0;
+}
+
+/* =========== LAYOUT DO BOTÃO INFO ======== */
+.tituloContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Remova se quiser alinhado à esquerda */
+  gap: 10px;
+  position: relative; /* Mantém a caixa de info presa a este bloco */
+}
+
+.btnInfo {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid #ffe81f; /* Amarelo clássico de Star Wars */
+  background-color: transparent;
+  color: #ffe81f;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Impede o botão de amassar em telas pequenas */
+  transition: all 0.2s ease;
+}
+
+.btnInfo:hover {
+  background-color: #ffe81f;
+  color: #000;
+}
+
+.caixaInfo {
+  position: absolute;
+  top: 110%; /* Aparece logo abaixo do título */
+  background-color: #1c1c1e;
+  color: #f5f5f7;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 12px 16px;
+  max-width: 320px;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.caixaInfo p {
+  margin: 0;
+}
+
+
+/* ========== BARRA DE AÇÃO (formulário e vitória) ========== */
+.vitoria {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto; /* empurra para baixo quando a tabela é curta */
+  width: 100%;
+  padding: 16px var(--spacing-xl);
+  background: var(--bg-page);
+  border-top: 1px solid #ddd;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.formulario {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px var(--spacing-xl);
+  background: var(--bg-white);
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vitoria {
+  text-align: center;
+}
+
+.vitoria p {
+  width: 100%;
+  margin: 0;
+}
+
+.input {
+  width: min(360px, 100%);
+  padding: 10px 12px;
+  font: inherit;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.botao {
+  padding: 10px 20px;
+  font: inherit;
+  color: #fff;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.botao:hover {
+  background: var(--primary-hover-color);
+}
+
+.botaoSecundario {
+  padding: 10px 20px;
+  font: inherit;
+  color: var(--primary-color);
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.botaoSecundario:hover {
+  background: rgb(0 0 0 / 0.06);
+}
+
+.mensagem {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: var(--cor-errado);
+}
+
+/* ========== TABELA ========== */
+.tabelaWrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tabela {
+  border-collapse: separate;
+  border-spacing: 4px;
+  text-align: center;
+}
+
+.tabela th {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.celula {
+  min-width: 90px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+.colunaPersonagem {
+  min-width: 110px;
+  padding: 4px;
+}
+
+.foto {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 4px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.nomePersonagem {
+  font-size: 0.8rem;
+}
+
+/* ========== STATUS DAS CÉLULAS ========== */
+.verde {
+  background: var(--cor-certo);
+  color: var(--cor-texto-certo);
+}
+
+.amarelo {
+  background: var(--cor-parcial);
+  color: var(--cor-texto-parcial);
+}
+
+.vermelho {
+  background: var(--cor-errado);
+  color: var(--cor-texto-errado);
+}
+
+.seta {
+  font-weight: bold;
+}
+
+/* ========== ANIMAÇÃO DA LINHA NOVA ========== */
+.linhaNova td {
+  animation: aparecer 0.4s ease both;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* ========== MODAL DE VITÓRIA ========== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 0.6);
+  animation: surgir 0.2s ease both;
+}
+
+.modal {
+  position: relative;
+  width: min(460px, 100%);
+  max-height: 90dvh;
+  overflow-y: auto;
+  padding: 24px;
+  text-align: center;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 0.3);
+  animation: subir 0.25s ease both;
+}
+
+.modalFechar {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-color);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.modalSubtitulo {
+  margin: 0;
+  color: var(--cor-certo);
+  font-weight: bold;
+}
+
+.modalFoto {
+  width: 160px;
+  height: 160px;
+  margin: 12px auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.modalNome {
+  margin: 0 0 12px;
+}
+
+/* curiosidades */
+.curiosidades {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0 0 16px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.curiosidades dt {
+  font-weight: bold;
+}
+
+.curiosidades dd {
+  margin: 0;
+}
+
+/* estatísticas da partida */
+.modalSecao {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.modalLegenda {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: var(--hover-color);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  background: #eee;
+  border-radius: 999px;
+}
+
+/* vitórias guardadas */
+.statsGlobais {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.statNumero {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.statRotulo {
+  font-size: 0.8rem;
+  color: var(--hover-color);
+}
+
+.modalAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .linhaNova td,
+  .overlay,
+  .modal {
+    animation: none;
+  }
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 768px) {
+  .jogo {
+    padding: var(--spacing-xl) 12px 0;
+  }
+
+  .formulario,
+  .vitoria {
+    padding-inline: 12px;
+  }
+
+  .input {
+    width: min(360px, calc(100vw - 140px));
+    box-sizing: border-box;
+  }
+}

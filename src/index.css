@@ -1,0 +1,27 @@
+:root {
+  --cor-certo: #2e7d32;
+  --cor-parcial: #f9a825;
+  --cor-errado: #c62828;
+  --cor-texto-certo: #fff;
+  --cor-texto-parcial: #000;
+  --cor-texto-errado: #fff;
+  --text-color: #333;
+  --hover-color: #666;
+  --primary-color: #000;
+  --primary-hover-color: #444;
+  --bg-white: #fff;
+  --spacing-xl: 24px;
+  --container-width: 1200px;
+  --transition-fast: 0.2s ease;
+  --font-family:"Average Sans", sans-serif;
+  --menu-font-family: "Orbitron", sans-serif;
+}
+body {
+  font-family: var(--font-family);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--menu-font-family);
+}
